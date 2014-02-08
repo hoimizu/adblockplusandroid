@@ -112,7 +112,7 @@ public class RequestHandler extends BaseRequestHandler
     }
 
     request.log(Server.LOG_LOG, prefix, block + ": " + request.url);
-
+    Log.d("Shawn", prefix+"Filter "+ block + ": " + request.url);
     int count = request.server.requestCount;
     if (shouldLogHeaders)
     {

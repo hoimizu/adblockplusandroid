@@ -452,7 +452,7 @@ public class AdblockPlus extends Application
   {
     if (abpEngine == null)
     {
-      File basePath = getFilesDir();
+      File basePath = getExternalFilesDir(null);
       abpEngine = new ABPEngine(this, basePath.getAbsolutePath());
     }
   }
@@ -498,7 +498,7 @@ public class AdblockPlus extends Application
       updateTime.set(Calendar.MINUTE, 0);
       // ...next day
       updateTime.add(Calendar.HOUR_OF_DAY, 24);
-      // Spread out the “mass downloading” for 6 hours
+      // Spread out the â€œmass downloadingâ€� for 6 hours
       updateTime.add(Calendar.MINUTE, (int) (Math.random() * 60 * 6));
     }
     else
