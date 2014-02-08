@@ -361,6 +361,8 @@ JNIEXPORT void JNICALL Java_org_adblockplus_android_ABPEngine_addSubscription(JN
     const std::string surl = GetString(pEnv, url);
     AdblockPlus::SubscriptionPtr subscription = filterEngine->GetSubscription(surl);
     subscription->AddToList();
+    AdblockPlus::FilterPtr hardCodedGoogleAdsFilter = filterEngine->GetFilter("||googleads.g.doubleclick.net*");
+    hardCodedGoogleAdsFilter->AddToList();
   }
   catch (const std::exception& e)
   {
