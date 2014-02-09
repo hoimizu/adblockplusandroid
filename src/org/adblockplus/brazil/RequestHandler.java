@@ -199,7 +199,9 @@ public class RequestHandler extends BaseRequestHandler
       String type = request.responseHeaders.get("Content-Type");
 
       String[] selectors = null;
-      if (type != null && type.toLowerCase().startsWith("text/html"))
+      
+      //disable content filters
+      /*if (type != null && type.toLowerCase().startsWith("text/html"))
       {
         String reqHost = "";
 
@@ -213,7 +215,7 @@ public class RequestHandler extends BaseRequestHandler
         }
 
         selectors = application.getSelectorsForDomain(reqHost);
-      }
+      }*/
       // If no filters are applicable just pass through the response
       if (selectors == null || target.getResponseCode() != 200)
       {

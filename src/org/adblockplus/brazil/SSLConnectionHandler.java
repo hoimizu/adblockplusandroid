@@ -94,6 +94,7 @@ public class SSLConnectionHandler extends BaseRequestHandler
 
       // Connect to server or upstream proxy
       serverSocket = new Socket();
+      serverSocket.setSoTimeout(0);
       serverSocket.setKeepAlive(true);
       serverSocket.connect(new InetSocketAddress(host, port));
     }
@@ -158,7 +159,7 @@ public class SSLConnectionHandler extends BaseRequestHandler
     @Override
     public void run()
     {
-      byte[] buf = new byte[4096];
+      byte[] buf = new byte[64];
       int count;
 
       try

@@ -99,7 +99,7 @@ public class HttpInputStream
      *
      * @see	#copyTo(OutputStream, int, byte[])
      */
-    public static int defaultBufsize = 4096;
+    public static int defaultBufsize = 64;
 
     /**
      * Creates a new HttpInputStream that reads its input from the

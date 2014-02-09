@@ -350,7 +350,7 @@ public class Server
      * <p>
      * The default value is <code>30000</code>.
      */
-    public int timeout = 30000;
+    public int timeout = 0;
 
     /**
      * Maximum number of consecutive requests allowed on a single
